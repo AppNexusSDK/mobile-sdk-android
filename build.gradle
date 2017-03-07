@@ -24,3 +24,9 @@ allprojects {
 
     evaluationDependsOnChildren()
 }
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
