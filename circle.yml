@@ -1,0 +1,17 @@
+machine:
+  environment:
+    ANDROID_HOME: ~/android-sdk-linux
+
+  java:
+    version: openjdk8
+
+
+dependencies:
+  post:
+    - cd ~
+    - wget http://dl.google.com/android/android-sdk_r24.2-linux.tgz
+    - tar -xvf android-sdk_r24.2-linux.tgz
+    - while :; do echo y; sleep 1; done | android-sdk-linux/tools/android update sdk --no-ui
+    - sudo apt-get install libc6:i386 libstdc++6:i386
+    - sudo apt-get install zlib1g:i386
+
